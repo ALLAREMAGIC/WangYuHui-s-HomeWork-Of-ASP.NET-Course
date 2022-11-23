@@ -55,6 +55,12 @@
     <Reference Include="AspNet.ScriptManager.jQuery, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.6.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -64,6 +70,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -112,6 +120,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\MyPetShop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyPetShop.Context.cs</LastGenOutput>
+      <DependentUpon>MyPetShop.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Code\MyPetShop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyPetShop.edmx</DependentUpon>
+      <LastGenOutput>MyPetShop.cs</LastGenOutput>
+    </Content>
     <Content Include="ChatRoom\ShowChats.aspx" />
     <Content Include="ChatRoom\UserChat.aspx" />
     <Content Include="ChatRoom\ChatRoom.aspx" />
@@ -132,7 +150,16 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="MyResources\MyPetShop.sql" />
+    <Content Include="Pages\C7\LinqDSGrid.aspx" />
     <Content Include="维护.aspx" />
+    <EntityDeploy Include="App_Code\MyPetShop.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyPetShop.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="App_Code\MyPetShop.edmx.diagram">
+      <DependentUpon>MyPetShop.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="MyResources\TextFile.txt" />
     <Content Include="Pages\C2\2-14 FormBootStrap.aspx" />
@@ -281,6 +308,42 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\CartItem.cs">
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\Category.cs">
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\Customer.cs">
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\MyPetShop.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyPetShop.Context.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\MyPetShop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\MyPetShop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyPetShop.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Code\Order.cs">
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\OrderItem.cs">
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\Product.cs">
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
+    <Content Include="App_Code\Supplier.cs">
+      <DependentUpon>MyPetShop.tt</DependentUpon>
+    </Content>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ChatRoom\ShowChats.aspx.cs">
@@ -412,6 +475,13 @@
     <Compile Include="Pages\C6\provinces.aspx.designer.cs">
       <DependentUpon>provinces.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\C7\LinqDSGrid.aspx.cs">
+      <DependentUpon>LinqDSGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\C7\LinqDSGrid.aspx.designer.cs">
+      <DependentUpon>LinqDSGrid.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -466,6 +536,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
