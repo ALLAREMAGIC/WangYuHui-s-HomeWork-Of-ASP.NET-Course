@@ -16,11 +16,6 @@ public partial class Pages_C4_省市县动态表格1 : System.Web.UI.Page
         }
     }
 
-    protected void BackButton_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("../../Default.aspx");
-    }
-
     protected void ShowBtn_Click(object sender, EventArgs e)
     {
         SSX_Table.Visible = !SSX_Table.Visible;

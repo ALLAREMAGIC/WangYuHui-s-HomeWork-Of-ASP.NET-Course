@@ -1,4 +1,4 @@
-﻿// 为模型“C:\Users\Magic Computer\Desktop\临时文件\大三上动态网站2\仓库\WangYuHui-s-HomeWork-Of-ASP.NET-Course-SQL\ASP.NET SQL1\App_Code\Area.edmx”启用了 T4 代码生成。
+﻿// 为模型“C:\Users\Magic Computer\Desktop\临时文件\大三上动态网站2\仓库\WangYuHui-s-HomeWork-Of-ASP.NET-Course\ASP.NET SQL1\App_Code\Area.edmx”启用了 T4 代码生成。
 // 要启用旧代码生成功能，请将“代码生成策略”设计器属性的值
 // 更改为“旧的 ObjectContext”。当在设计器中打开该模型时，此属性会出现在
 // “属性”窗口中。

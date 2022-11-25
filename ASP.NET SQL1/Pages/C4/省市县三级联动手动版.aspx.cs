@@ -76,8 +76,4 @@ public partial class Pages_C4_省市县三级联动手动版 : System.Web.UI.Pag
         BindXian();
     }
 
-    protected void BackButton_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("../../Default.aspx");
-    }
 }

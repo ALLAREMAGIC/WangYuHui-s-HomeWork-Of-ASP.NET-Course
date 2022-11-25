@@ -20,7 +20,6 @@
             </asp:DropDownList>
 &nbsp;县</div>
         <div>
-            <asp:Button ID="BackButton1" runat="server" OnClick="BackButton_Click" Text="返回首页" /></div>
     </form>
 </body>
 </html>

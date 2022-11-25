@@ -24,7 +24,6 @@
                 </asp:TableRow>
             </asp:Table>
         </div>
-            <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="返回首页" />
     </form>
 </body>
 </html>
